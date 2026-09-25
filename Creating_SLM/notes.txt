@@ -1,3 +1,5 @@
+Lab 1
+
 for a chatbot to predict the next word the most important thing is to know the context
 which is the words that come before predicting the next word. 
 This can all be predicted using probablities. We get the probablities by analyzing past text
@@ -8,4 +10,43 @@ e.g.
 jade was hungry and wanted some ___
 here we wouldn't say 'rock' it is more sense to write 'food', 'snacks' and such.
 
-changing the context will change the problablity distrubution of the words
+changing the context will change the problablity distrubution of the candidate words.
+
+Lab 2
+
+it is impossible to manually assign probablities to candidate words for infinite contexts
+
+'you shall know a word by the company it keeps'
+
+by statistically analyzing lots of text we can determine which words will more likely occur next to each other
+for this we can use conditional probablities
+
+P (person | kind)
+problablity that person will occur given that the previous word was kind.
+
+P (B|A) = (AB) / (A)
+
+N-grams is a sequence of n words that appear together in text. by counting how often
+n-grams occur in a large amounts of text we can capture patterns of language
+
+'Jade was hungry so'
+Unigrams(n=1): Jade, was, hungry, so
+bigrams(n=2): Jade was, was hungry, hungry so
+Trigrams(n=3): Jade was hungry, was hungry so
+
+for instance 'New York City'
+we can predict that 'City' is the word that will follow the bigram New York
+
+P(city|new york) = count(new york city)/count(new york)
+
+The context window is very important part of the n-grams model.
+for a bigram model the context window is one
+for a trigram model the context window is two.
+what this means is that the next word is predicted based on the context window
+
+Tokenisation is splitting a long consequence of text to individual words. 
+The simplest one is the space Tokeniser which splits words based on the spaces in between
+when doing this puncuation will be part of the word cause the text is split using spaces
+This is why they are called tokens and not words.
+a token can be 'tall!' or '3/4'
+
