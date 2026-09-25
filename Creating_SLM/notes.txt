@@ -1,0 +1,11 @@
+for a chatbot to predict the next word the most important thing is to know the context
+which is the words that come before predicting the next word. 
+This can all be predicted using probablities. We get the probablities by analyzing past text
+a good language model is sensitive to context.
+
+e.g.
+
+jade was hungry and wanted some ___
+here we wouldn't say 'rock' it is more sense to write 'food', 'snacks' and such.
+
+changing the context will change the problablity distrubution of the words
